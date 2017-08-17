@@ -5,6 +5,7 @@ import (
 	"bufio"
 	"os"
 	"github.com/howeyc/gopass"
+	"strings"
 )
 
 func printInfo(msg string) {
@@ -24,7 +25,7 @@ func askProperty(question string) string {
 
 	answer, _ := bufio.NewReader(os.Stdin).ReadString('\n')
 
-	return answer
+	return strings.TrimSpace(answer)
 }
 
 func askSecret(question string) string {
